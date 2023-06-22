@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+
+
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!--boxicons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--dataaos-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="icon" href="img/logo.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa</title>
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* variável das cores */
+:root{
+    --color-main: #4E56F4;
+    --color-two: #D9FA84;
+    --color-three: #CA7FFE;
+    --color-four: #7411E6;
+    --color-five: #4a3b96;
+    --color-six: #d59ffa;
+    --color-seven: #A278DE;
+    --color-eight: #EBFDBC;
+    --color-text: #1c1b1b;
+    --color-white: #F6F5F1;
+}
+
+body{
+    background-color: var(--color-white);
+}
+
+/* cabeçalho */
+header{
+    background: var(--color-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding:0 4rem;
+    height: 4rem;
+    overflow: hidden;
+}
+
+header button{
+    border-radius: 2rem;
+    padding: 0.5rem;
+    height: 2rem;
+    background-color: var(--color-three);
+    align-items: center;
+    display: flex;
+}
+
+header button a{
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 550;
+}
+
+header button:hover{
+    background-color: var(--color-two);
+}
+
+header button a:hover{
+    color: var(--color-main);
+}
+
+header .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    flex-direction: column;
+}
+
+header .logo img{
+    width: 4rem;
+}
+
+.logo h1{
+    font-size: .9rem;
+    color: var(--color-white);
+}
+
+.menu-hamburguer{
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.menu-hamburguer .bar{
+    display: block;
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: var(--color-two);
+    margin: 6px auto;
+    transition: all 0.3s;
+}
+
+.menu-hamburguer.ativo .bar:nth-child(1){
+    position: absolute;
+    z-index: 5;
+    transform: translateY(8px) rotate(45deg);
+
+}
+.menu-hamburguer.ativo .bar:nth-child(2){
+    opacity: 0;
+}
+.menu-hamburguer.ativo .bar:nth-child(3){
+    position: absolute;
+    z-index: 5;
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.navigation{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    right: -100%;
+    top: 0;
+    width: 45%;
+    height: 110.2%;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--color-three);
+}
+
+.navigation.ativo{
+    right: 0;
+    display: flex;
+}
+
+.navigation ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    cursor: pointer;
+}
+
+.navigation ul li{
+    margin: 2rem;
+    text-align: center;
+    text-indent: 1rem;
+    color: var(--color-two);
+    font-size: 1.3rem;
+    font-weight: 550;
+}
+
+.navigation ul li a{
+    color: var(--color-two); 
+    text-align: left;
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+.navigation ul li a:hover{
+    text-decoration: underline;
+}
+
+.navigation ul li i{
+    font-size: 1.6rem;
+    padding-right: .6rem;
+    color: var(--color-four);
+}
+
+
+/*sobre nós*/
+
+.company-container{
+    background-image: url(img/company.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    width: 100%;
+    height: 100vh;
+}
+
+.company-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 55%;
+    margin-left: 2rem;
+    margin-top: 7rem;
+}
+
+.company-container h1{
+    color: var(--color-two);
+    font-size: 3.6rem;
+    margin-top: 2rem;
+}
+
+.company-container p{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color:#F6F5F1 ;
+}
+
+/*linha do tempo*/
+
+.timeline{
+    position: relative;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 1000px;
+    box-sizing: border-box;
+}
+
+.timeline:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #7e7d7d;
+}
+
+.h4{
+    color: var(--color-main);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 6rem;
+    text-transform: uppercase;
+}
+
+
+.timeline ul{
+    margin: 0;
+    padding: 0;
+}
+
+.timeline ul li{
+    list-style: none;
+    position:relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline ul li:nth-child(odd){
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.timeline ul li:nth-child(even){
+    float: right;
+    text-align: left;
+    clear: both;
+}
+
+.content{
+    padding-bottom: 2opx;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.timeline ul li:nth-child(odd):before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-four);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #8026e7;
+    top: 24px;
+    right: -6px;
+}
+
+.timeline ul li:nth-child(even):before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-four);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #8026e7;
+    top: 24px;
+    left: -4px;
+}
+
+.timeline ul li h2{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: var(--color-three);
+    margin-bottom: 3rem;
+}
+
+.timeline ul li p{
+    margin: 10px 0 0;
+    padding: 0;
+
+}
+
+.timeline ul li .time h4{
+    margin: 0;
+    padding: 0;
+    font-size: 14px
+}
+
+.timeline ul li:nth-child(odd) .time{
+    position: absolute;
+    top: 12px;
+    right: -200px;
+    margin: 0;
+    padding: 8px 16px;
+    background: var(--color-two);
+    color: var(--color-four);
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px #e4f7b6;
+}
+
+.timeline ul li:nth-child(even) .time{
+    position: absolute;
+    top: 12px;
+    left: -200px;
+    margin: 0;
+    padding: 8px 16px;
+    background: var(--color-two);
+    color: var(--color-four);
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px #e4f7b6;
+}
+
+/*valores*/
+
+h4{
+    color: var(--color-four);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.value-circle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8rem;
+    padding: 2rem;
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.img{
+    height: 30%;
+    width: 30%;
+}
+
+.circle h5{
+    text-align: center;
+    color: #CA7FFE;
+    margin-top: 1.3rem;
+}
+
+.circle:hover{
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 20px 20px 50px -30px rgb(145, 144, 144);
+    transition: .3s ease;
+    padding: 0.1rem;
+}
+
+/*equipe*/
+
+.halves-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8rem;
+}
+
+.first-half{
+    height: 100vh;
+    width: 50%;
+    background-color:#e6e5e0;
+}
+
+.curiosity{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.curiosity h6{
+    font-size: 2.6rem;
+    color: #10083b;
+    margin-top: 5rem;
+}
+
+
+.curiosity p{
+    font-size: 1.6rem;
+    color: var(--color-three);
+}
+
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
+
+button.learn-more {
+ width: 12rem;
+ height: auto;
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: var(--color-three);
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ color: #1c1b1b;
+ font-weight: 700;
+ line-height: 1.6;
+ text-align: center;
+ text-transform: uppercase;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #1c1b1b;
+ padding-left: 1rem;
+}
+
+.second-half{
+    height: 100vh;
+    width: 50%;
+    background-color:#ba79e9;
+}
+
+.curiosity-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.curiosity-img img{
+    width: 70%;
+}
+
+footer{
+    width: 100%;
+}
+
+.container-footer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    background-color: #4A0A94;
+    height: 15rem;
+}
+
+.logo-contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container-footer .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24rem;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.container-footer .logo img{
+    width: 8rem;
+}
+
+.container-footer .logo h1{
+    font-size: 1.2rem;
+    color: var(--color-seven);
+}
+
+.icons-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.icons-footer i{
+    font-size: 2rem;
+    color: var(--color-five);
+    background-color: var(--color-two);
+    border-radius: 50%;
+    padding: .3rem;
+    transition: .3s ease;
+}
+
+.icons-footer i:hover{
+    scale: 1.1;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul li a{
+    color: var(--color-eight);
+    font-size: 1.3rem; 
+    transition: .3s; 
+    text-decoration: none;
+}
+
+.nav-links ul li a:hover{
+    color: #8275c7 ;
+}
+
+.frase{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 5rem;
+   gap: 2rem;
+}
+
+.frase p{
+    color: var(--color-two);
+    width: 90%;
+    font-size: 1.2rem;
+}
+
+.topo{
+    display: flex;
+    justify-content: end;
+    margin-right: 4rem;
+    width: 100%;
+}
+
+.topo i{
+    color: var(--color-five);
+    border-radius: 50%;
+    background-color: var(--color-two);
+    font-size: 3rem;
+}
+
+.topo i:hover{
+    opacity: 0.8;
+}
+
+.developed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #695BAD;
+    height: 3rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+.developed span{
+    color: var(--color-two);
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px){
+
+header{
+    padding: 0 2rem;
+}
+
+header button{
+    padding: 0.9rem;
+    width: 8rem;
+}
+
+header button a{
+    font-size: 0.7rem;
+    font-weight: 550;
+}
+
+.navigation{
+    width: 100%;
+    height: 100%;
+}
+
+.navigation ul li{
+    margin: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 550;
+    padding: 1.2rem;
+}
+
+
+.navigation ul li a{
+    display: flex;
+    flex-direction: row;
+}
+
+.company-container{
+    background-image: url(img/company-responsive.png);
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.company-text{
+    width: 90%;
+    margin-top: 3rem;
+    
+}
+
+.company-container h1{
+    color: var(--color-two);
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.company-container p{
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+.timeline{
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.h4{
+    margin-top: 4rem;
+    text-align: left;
+    padding: 1.5rem;
+}
+
+.timeline::before{
+    left: 20px;
+}
+
+.timeline ul li:nth-child(odd),
+.timeline ul li:nth-child(even){
+    width: 100%;
+    text-align: left;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+.timeline ul li:nth-child(odd):before,
+.timeline ul li:nth-child(even):before{
+    top: 18px;
+    left: 16px;
+}
+
+.timeline ul li:nth-child(odd) .time,
+.timeline ul li:nth-child(even) .time{
+    top: -30px;
+    left: 50px;
+    right: inherit;
+}
+
+.value-circle{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.halves-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.first-half{
+    width: 100%;
+}
+
+.curiosity h6{
+    font-size: 2.3rem;
+}
+
+.second-half{
+    width: 100%;
+    height: 80vh;
+}
+
+.curiosity-img img{
+    width: 70%;
+}
+
+.container-footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        width: 100%;
+        height: 50rem;
+    }
+
+.frase{
+       margin-top: 2rem;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+ <!--Cabeçalho-->
+    <header class="header" id="voltar">
+
+       
+
+        <button><a href="">Cadastre-se</a></button>
+        <div class="logo"><img src="img/logocenter.png" alt="logo-home"><h1>Codeplus</h1></div>
+
+        <div class="menu-hamburguer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="navigation" id="barra-menu">
+            <ul>
+                <li><a href=""><i class='bx bx-home-alt-2'></i>Home</a></li>
+                <li><a href=""><i class='bx bx-palette'></i>Templates</a></li>
+                <li><a href=""><i class='bx bx-buildings'></i>Empresa</a></li>
+                <li><a href=""><i class='bx bxs-credit-card'></i>Orçamento</a></li>
+                <li><a href=""><i class='bx bx-group'></i>Equipe</a></li>
+            </ul>
+        </nav>
+
+         <!--Cabeçalho-->
+</header>
+
+
+ <!--Carrossel-->
+<section>
+     
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/carrosselimg1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/carrosselimg3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/carrosselimg2.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!---Carrossel-->
+</section>
+
+<!--Sobre nós-->
+<section>
+
+    <div class="company-container">
+
+        <div class="company-text">
+
+    <h1>Sobre a empresa</h1>
+
+    <p>Nossa empresa foi criada a partir de quatro estudantes de desenvolvimento web chamados: Sued Duarte, Pablo Soares, Fernanda Rosa, Evelyn Eggres e Gustavo Espindola. Nosso objetivo era que pessoas sem conhecimento de programação pudessem ter um site do seu próprio jeitinho e com as mesmas funcionalidades que alguém com conhecimento faria. </p>
+
+</div>
+</div>
+</section> 
+
+<!--Linha do tempo-->
+<section>
+
+    
+<h4 class="h4">Nossa linha do tempo</h4>
+
+    <div class="timeline">
+
+        
+
+        <ul>
+            <li>
+                <div class="content" data-aos="flip-left">
+                    <h2>Começo</h2>
+                    <p>Começamos o curso de programação web full stack. Ainda não nos conhecíamos mas já nas primeiras semanas ficamos sabendo que teríamos de criar um site com alguma finalidade.</p>
+                </div>
+
+                <div class="time">
+                    <h3>Setembro</h3>
+                </div>
+            </li>
+
+            <li>
+                <div class="content" data-aos="flip-right">
+                    <h2>Primeiro grupo</h2>
+                    <p>Dois meses depois nós já tinhamos um grupo criado, naquela época os membros eram um pouco diferentes. Mas já começamos a debater ideias do que iriamos criar e qual era nosso objetivo. </p>
+                </div>
+
+                <div class="time">
+                    <h3>Novembro</h3>
+                </div>
+            </li>
+
+            <li>
+                <div class="content" data-aos="flip-left">
+                    <h2>Primeira ideia</h2>
+                    <p>Depois que voltamos do recesso de um mês, conversamos sobre as ideias que haviam surgido. Percebemos que o que queíamos fazer era algo que atendesse o público de alguma maneira, que pudesse ajudar usuários com algo ou objetivo.</p>
+                </div>
+
+                <div class="time">
+                    <h3>Janeiro</h3>
+                </div>
+            </li>
+
+            <li>
+                <div class="content" data-aos="flip-right">
+                    <h2>Projeto teste</h2>
+                    <p>Nesse ponto o nosso grupo se transformou no que é hoje. Também decidimos qual seria o conteúdo do nosso projeto. Assim como começamos com novas linguagens de programação, que futuramente iria nos ajudar na criação. Com a ideia pronta, começamos um projeto teste para definirmos como seria nosso layout.</p>
+                </div>
+
+                <div class="time">
+                    <h3>Março</h3>
+                </div>
+            </li>
+
+            <li>
+                <div class="content" data-aos="flip-left">
+                    <h2>Começando a pôr em prática!</h2>
+                    <p>Com tudo pronto, começamos a fazer acontecer! Foram várias semanas de muito trabalho, mas nos dedicamos a entregar a melhor experiência que nosso usuário poderia ter.</p>
+                </div>
+
+                <div class="time">
+                    <h3>Maio</h3>
+                </div>
+            </li>
+
+            <li>
+                <div class="content" data-aos="flip-right">
+                    <h2>Site no ar!</h2>
+                    <p>Agora é só você navegar pelo nosso website e ter uma experiência maravilhosa! Além de um projeto de tcc, nosso site procura atender o usuário com o carinho que deve ser.</p>
+                </div>
+
+                <div class="time">
+                    <h3>Julho</h3>
+                </div>
+            </li>
+            <div style="clear: both;"></div>
+        </ul>
+    </div>
+
+
+</section>
+
+
+<!---Valores-->
+<section>
+
+
+<h4>Nossos valores</h4>
+
+    <div class="value-circle">
+
+        <div class="circle">
+
+            <div class="image">
+            <img class="img" src="img/group.png" alt="icon equipe">
+            </div>
+
+            <h5>Trabalho em equipe</h5>
+
+        </div>
+
+        <div class="circle">
+
+            <div class="image">
+            <img class="img" src="img/respect.png" alt="icon respeito">
+            </div>
+
+            <h5>Respeito</h5>
+            
+        </div>
+
+        <div class="circle">
+
+            <div class="image">
+            <img class="img" src="img/innovation.png" alt="icon inovação">
+            </div>
+
+            <h5>Inovação</h5>
+            
+        </div>
+
+        <div class="circle">
+
+            <div class="image">
+            <img class="img" src="img/commitment.png" alt="">
+            </div>
+
+            <h5>Comprometimento</h5>
+            
+        </div>
+
+        <div class="circle">
+
+            <div class="image">
+            <img class="img" src="img/responsibility.png" alt="">
+            </div>
+
+            <h5>Responsabilidade</h5>
+            
+        </div>
+
+    </div>
+
+
+
+
+</section>
+
+
+<!--Equipe-->
+<section>
+
+    <div class="halves-container">
+
+    <div class="first-half">
+
+        <div class="curiosity">
+
+            <h6>Conheça os membros da nossa equipe</h6>
+
+            <p>Quer conhecer melhor cada um de nós? Confira as habilidades das pessoas que fazem do seu sonho realidade!</p>
+
+            <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Visitar</span>
+              </button>
+
+            </div>
+        </div>
+
+   
+
+    <div class="second-half">
+
+        <div class="curiosity-img">
+        <img src="img/equipe.png" alt="">
+        </div>
+
+
+    </div>
+
+ </div>
+</section>
+
+<!--footer-->
+<footer class="footer">
+
+    <div class="container-footer">
+
+        <div class="logo-contacts">
+            <div class="logo"><img src="img/logocenter.png" alt="logo">
+            <h1>Codeplus</h1> 
+            </div>
+
+            <div class="icons-footer">
+            <i class='bx bxl-instagram'><a href="#"></a></i>
+            <i class='bx bx-envelope'><a href="#"></a></i>
+            </div>
+        </div>
+       
+        <div class="nav-links">
+           <ul>
+            <li><a href="">Templates</a></li>
+            <li><a href="">Orçamento</a></li>
+           </ul>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+            <li><a href="">Empresa</a></li>
+            <li><a href="">Equipe</a></li>
+            </ul>
+        </div>
+
+        <div class="frase">
+            <p>Obrigada por acessar o nosso site. Volte sempre!</p>
+            
+            <div class="topo">
+            <a href="#voltar"><i class='bx bx-up-arrow-alt'></a></i>
+        </div>
+        </div>
+    </div>
+        
+    
+    <div class="developed">
+           <span>&#169 2023 | Equipe da empresa "nome"</span>
+        </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script src="empresa.js"></script>
+
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
